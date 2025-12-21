@@ -2,6 +2,12 @@
     --header-height: 80px;
 }
 
+/* navbar color variables for blending */
+:root{
+    --nav-color-1: 52,73,94; /* rgb(52,73,94) */
+    --nav-color-2: 44,62,80; /* rgb(44,62,80) */
+}
+
 /* Global box-sizing and overflow safety to avoid horizontal scaling */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { overflow-x: hidden; }
@@ -85,7 +91,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: transparent;
     margin-bottom: 2rem;
     border-radius: 15px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.1);
@@ -114,6 +120,30 @@ section.visible {
     text-align: left;
 }
 
+/* subtle blend of navbar colors across the main top sections */
+#introduction,
+#skills,
+#about {
+    /* keep section backgrounds visually consistent via overlay pseudo-element */
+}
+
+/* layered overlay: subtle navbar-colored gradient only (no heavy white base) */
+#introduction::before,
+#skills::before,
+#about::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 15px;
+    background: linear-gradient(to bottom, rgba(var(--nav-color-1),0.06), rgba(var(--nav-color-2),0.02));
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* make sections positioned so the overlay sits underneath content */
+section { position: relative; }
+section > * { position: relative; z-index: 1; }
+
 .intro-container {
     display: flex;
     align-items: flex-start;
@@ -124,6 +154,16 @@ section.visible {
     width: 100%;
     padding: 0 1rem;
 }
+
+/* add a subtle tint directly to tiles so the blend reads on cards rather than darkening everything */
+.skill {
+    background-image: linear-gradient(to bottom, rgba(var(--nav-color-1),0.03), rgba(var(--nav-color-2),0.01));
+    background-blend-mode: overlay;
+}
+
+/* ensure anchored sections don't get hidden under the fixed header */
+html { scroll-padding-top: calc(var(--header-height) + 12px); }
+section { scroll-margin-top: calc(var(--header-height) + 12px); }
 
 #introduction .profile-pic {
     width: 150px;
