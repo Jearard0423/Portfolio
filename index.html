@@ -13,6 +13,7 @@
             <ul>
                 <li><a href="#introduction">Introduction</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#about">About Me</a></li>
             </ul>
         </nav>
@@ -57,6 +58,26 @@
             </div>
         </div>
     </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <p>Here are some projects I accomplished. Click to view project details:</p>
+        <div class="projects-grid">
+            <article class="project-card" data-title="Admin & TODA Officer Dashboard — Pasakay" data-desc="A responsive admin dashboard for Pasakay that helps administrators and TODA officers manage drivers, bookings, passengers, fare matrix, and logs. The interface provides live overview cards, applicant management with search and filters, and editable records." data-note="Note: This project is intended to run on a local server and is not hosted publicly.">
+                <div class="project-gallery">
+                    <img class="project-thumb" data-index="0" src="Screenshot 2026-02-02 195922.png" alt="Pasakay Dashboard - Overview">
+                    <img class="project-thumb" data-index="1" src="Screenshot 2026-02-02 200024.png" alt="Pasakay Dashboard - Applicants">
+                </div>
+                <h3>Admin & TODA Officer Dashboard — Pasakay</h3>
+                <p>A responsive admin dashboard for Pasakay that helps administrators and TODA officers manage drivers, bookings, passengers, fare matrix, and logs. The interface provides live overview cards (today's rides, online drivers, total bookings), streamlined applicant management with search and status filters, and quick edit actions for records.</p>
+                <ul class="project-features">
+                    <li>Overview stats & interactive cards</li>
+                    <li>Driver & applicant table with search, filters, and actions</li>
+                    <li>Responsive layout for desktop and mobile</li>
+                </ul>
+                <p><a href="#" class="view-project" data-project="pasakay">Open gallery</a></p>
+            </article>
+        </div>
+    </section>
     <section id="about">
         <h2>About Me</h2>
         <p>Welcome to my portfolio website. I am Salvador, Gerard Jose N., an aspiring full stack developer dedicated to building innovative web applications.</p>
@@ -70,6 +91,26 @@
             <li><i class="fab fa-instagram"></i> Instagram: <a href="https://www.instagram.com/_rarrdd" target="_blank">@_rarrdd</a></li>
         </ul>
     </section>
+    <!-- Lightbox / Project modal -->
+    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="lightbox-inner">
+            <button class="lb-close" aria-label="Close">&times;</button>
+            <div class="lb-media">
+                <button class="lb-prev" aria-label="Previous">&#10094;</button>
+                <img src="" alt="">
+                <button class="lb-next" aria-label="Next">&#10095;</button>
+            </div>
+            <div class="lb-details">
+                <h3>Admin & TODA Officer Dashboard — Pasakay</h3>
+                <p>The dashboard helps administrators and TODA officers manage drivers, bookings, passengers, fare matrix, and logs. It includes overview cards, applicant management with search and filters, and editable records.</p>
+                <p><strong>Note:</strong> This project is intended to run on a local server and is not hosted publicly.</p>
+                <div class="lb-actions">
+                    <button class="lb-next-details" aria-label="Next project">Next →</button>
+                </div>
+            </div> 
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
